@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MYBOT</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">BOT</div>
+        <div class="chat-space" id="chat-space"></div>
+        <div class="input-container">
+          <input type="text" name="input-message" id="input-message" placeholder="Type a message">
+          <button id="send-button" class="send-button">Send</button>
+          <button style="font-size:24px"><i class="fa fa-microphone"></i></button>
+      </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+        <script>
+            async function sendMessage() {
+                const messageInput = document.querySelector("#input-message");
+                const message = messageInput.value.trim();
+                if (message) {
+                    addMessage(message, "sent");
+                    messageInput.value = "";
+            
+                    // Create a FormData object and append the message
+                    const formData = new FormData();
+                    formData.append("input-message", message);
+            
+                    // Send the FormData object as the body of the request
+                    const response = await fetch("/send-message", {
+                        method: "POST",
+                        body: formData
+                    });
+                    const reply = await response.text();
+                    addMessage(reply, "received");
+                }
+            }
+            
+    
+            function addMessage(message, type) {
+                const chatSpace = document.querySelector("#chat-space");
+                const messageContainer = document.createElement("div");
+                messageContainer.classList.add("message-container", type);
+                const messageElement = document.createElement("div");
+                messageElement.classList.add("message", type);
+                messageElement.textContent = message;
+    
+                messageContainer.appendChild(messageElement);
+                chatSpace.appendChild(messageContainer);
+                chatSpace.scrollTop = chatSpace.scrollHeight;
+            }
+            
+            const sendButton = document.querySelector("#send-button");
+            sendButton.addEventListener("click", sendMessage);
+            
+            const messageInput = document.querySelector("#input-message");
+            messageInput.addEventListener("keydown", function(event) {
+                if (event.key === "Enter") {
+                    event.preventDefault();
+                    sendMessage();
+                }
+            });
+        </script>
+</body>
+</html>
