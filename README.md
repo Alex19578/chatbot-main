@@ -69,8 +69,7 @@ Technologies Used
     OpenAI API: Provides the natural language processing capabilities.
 
 Project Structure
-
-plaintext
+```
 
 .
 ├── app.py               # Main application file
@@ -82,7 +81,7 @@ plaintext
 ├── .env                 # Environment variables
 ├── requirements.txt     # List of Python dependencies
 └── README.md            # Project documentation
-
+```
 Customization
 
     Bot Personality: Adjust the bot's personality by modifying the prompt in app.py.
