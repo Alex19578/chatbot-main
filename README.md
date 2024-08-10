@@ -88,13 +88,3 @@ Customization
     Response Length: Control the verbosity of responses through the API parameters.
     Languages: Add support for more languages by updating the language model in app.py.
 
-Contributing
-
-Contributions are welcome! If you have ideas for new features, improvements, or bug fixes, please submit a pull request or open an issue.
-License
-
-This project is licensed under the MIT License. See the LICENSE file for more details.
-Acknowledgments
-
-    Thanks to OpenAI for providing the GPT-3 API.
-    Inspiration from the original ChatGPT by OpenAI.
