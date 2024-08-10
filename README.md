@@ -1,6 +1,6 @@
 ChatGPT Chatbot Clone
 
-A clone of the popular ChatGPT chatbot built using state-of-the-art machine learning and natural language processing techniques. This project replicates the functionality of OpenAI's ChatGPT, allowing users to interact with the bot for various purposes such as answering questions, engaging in conversations, and providing helpful information.
+A clone of the popular ChatGPT chatbot built using state of the art machine learning and natural language processing techniques. This project replicates the functionality of OpenAI's ChatGPT, allowing users to interact with the bot for various purposes such as answering questions, engaging in conversations, and providing helpful information.
 Features
 
     Interactive Chat Interface: Users can chat with the bot in real-time through a user-friendly web interface.
@@ -20,7 +20,7 @@ Follow these steps to run the ChatGPT Chatbot Clone locally on your machine:
 
 bash
 
-git clone https://github.com/yourusername/chatgpt-chatbot-clone.git
+git clone https://github.com/alex19578/chatbot-main.git
 cd chatgpt-chatbot-clone
 
 2. Install Dependencies
@@ -41,7 +41,7 @@ To use the chatbot, you will need an API key from OpenAI. Follow these steps:
 
 bash
 
-OPENAI_API_KEY=your_api_key_here
+OPENAI_API_KEY= #your_api_key_here
 
 4. Start the Application
 
